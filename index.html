@@ -981,13 +981,13 @@
 
     <!-- APK Download Section -->
     <section class="apk-download" id="download">
-        <h2 class="animate">حمّل تطبيق حفّفلي الآن</h2>
-        <p class="animate"> التّطبيق آمن جدًّا، وسيتمّ نشره على متجر التّطبيقات قريبًا... </p>
+        <h2 class="animate"> حمّل تطبيق حفّفلي الآن...</h2>
+        <p class="animate"> حلّاقك المفضّل على بُعد نقرة. </p>
         <button class="apk-btn animate" id="apkDownloadBtn">
             <i class="fas fa-download"></i>
             <span>تحميل APK (24MB)</span>
         </button>
-        <p class="animate"> حلّاقك المفضّل على بُعد نقرة. </p>
+        <p class="animate">  ملاحظة: التّطبيق آمن جدًّا، وسيتمّ نشره على متجر التّطبيقات قريبًا... </p>
     </section>
 
     <!-- Screenshots Section -->
@@ -1045,21 +1045,21 @@
                     <i class="fas fa-bell"></i>
                 </div>
                 <h3>تذكير بالمواعيد</h3>
-                <p>احصل على تذكير قبل موعدك بوقت كافٍ حتى لا تفوت موعدك.</p>
+                <p>احصل على تذكير قبل موعدك بوقت كافٍ حتى لا تفوّت موعدك.</p>
             </div>
             <div class="feature-card animate">
                 <div class="feature-icon">
                     <i class="fas fa-credit-card"></i>
                 </div>
                 <h3>دفع آمن</h3>
-                <p>ادفع بطرق آمنة ومتنوعة عبر التطبيق دون الحاجة للدفع نقداً. علمًا أن التّطبيق لا يقتطع سوى 25 دج عن كلّ موعدٍ محقّق</p>
+                <p>ادفع بطرق آمنة ومتنوعة عبر التطبيق دون الحاجة للدفع نقداً؛ علمًا أن التّطبيق لا يقتطع سوى 25 دج عن كلّ موعدٍ محقّق</p>
             </div>
             <div class="feature-card animate">
                 <div class="feature-icon">
                     <i class="fas fa-history"></i>
                 </div>
                 <h3>سجل المواعيد</h3>
-                <p>احتفظ بسجل كامل لجميع مواعيدك لذات اليوم مع حساب للوقت المتبقي عليها .</p>
+                <p>احتفظ بسجل كامل لجميع مواعيدك لذات اليوم مع حساب للوقت المتبقي عليها.</p>
             </div>
         </div>
     </section>
@@ -1080,7 +1080,7 @@
                         </div>
                     </div>
                     <div class="testimonial-text">
-                        <p>تطبيق رائع وسهل الاستخدام. وفر علي الكثير من الوقت والجهد في البحث عن حلاق جيد. أنصح الجميع بتجربته.</p>
+                        <p>تطبيق رائع وسهل الاستخدام، لقد وفر علي الكثير من الوقت والجهد في البحث عن حلاق جيد، أنصح الجميع بتجربته.</p>
                     </div>
                 </div>
                 <div class="testimonial-card animate">
@@ -1094,7 +1094,7 @@
                         </div>
                     </div>
                     <div class="testimonial-text">
-                        <p>منذ أن بدأت باستخدام حفّفلي، لم أعد أقلق بشأن مواعيد الحلاقة. التطبيق سهل ويوفر حلاقين محترفين.</p>
+                        <p>منذ أن بدأت باستخدام حفّفلي، لم أعد أقلق بشأن مواعيد الحلاقة، التطبيق سهل ويوفر حلاقين محترفين.</p>
                     </div>
                 </div>
                 <div class="testimonial-card animate">
@@ -1108,7 +1108,7 @@
                         </div>
                     </div>
                     <div class="testimonial-text">
-                        <p>التطبيق ممتاز ويوفر مجموعة متنوعة من الخدمات. خاصية التقييم تساعد في اختيار الحلاق المناسب.</p>
+                        <p>التطبيق ممتاز ويوفر مجموعة متنوعة من الخدمات، خاصية التقييم تساعد في اختيار الحلاق المناسب.</p>
                     </div>
                 </div>
                 <div class="testimonial-card animate">
@@ -1122,7 +1122,7 @@
                         </div>
                     </div>
                     <div class="testimonial-text">
-                        <p>التطبيق ممتاز ويُجنّب الحلّاق من اكتظاظ محلّه بالزبائن غير الجادّين .</p>
+                        <p>التطبيق ممتاز ويُجنّب الحلّاق من اكتظاظ محلّه بالزبائن غير الجادّين.</p>
                     </div>
                 </div>
                 <div class="testimonial-card animate">
@@ -1251,42 +1251,48 @@
         const successMessage = document.getElementById('successMessage');
         
         apkDownloadBtn.addEventListener('click', function() {
-    downloadModal.classList.add('active');
-    this.disabled = true;
-
-    // Start download immediately
-    const downloadLink = document.createElement('a');
-    downloadLink.href = 'https://drive.google.com/uc?export=download&id=1O-HZskOvx0RGBpz99vCfvXyVkvvMKdw6';
-    downloadLink.download = 'heffefli.apk';
-    downloadLink.click();
-
-    // Show realistic progress
-    let progress = 0;
-    const startTime = Date.now();
-    const averageTime = 60000; // 60 seconds average for 75MB
-    
-    const interval = setInterval(() => {
-        const elapsed = Date.now() - startTime;
-        progress = Math.min(99, (elapsed / averageTime) * 100);
-        
-        progressBarModal.style.width = `${progress}%`;
-        progressText.textContent = `${Math.round(progress)}%`;
-        
-        // Show success after reasonable time or when user likely has the file
-        if (elapsed > 30000 && progress > 50) { // After 30 seconds and 50% progress
-            clearInterval(interval);
-            progressBarModal.style.width = '100%';
-            progressText.textContent = '100%';
-            setTimeout(showSuccessMessage, 1000);
-        }
-        
-        // Maximum wait time
-        if (elapsed > 120000) { // 2 minutes max
-            clearInterval(interval);
-            showSuccessMessage();
-        }
-    }, 1000);
-});
+            // Show download modal
+            downloadModal.classList.add('active');
+            
+            // Disable the button during download
+            this.disabled = true;
+            
+            // Simulate download progress
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 1;
+                progressBarModal.style.width = `${progress}%`;
+                progressText.textContent = `${progress}%`;
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    
+                    // Show success message
+                    setTimeout(() => {
+                        successMessage.classList.add('active');
+                        
+                        // Start actual download after showing success message
+                        setTimeout(() => {
+                            const downloadLink = document.createElement('a');
+                            downloadLink.href = 'https://raw.githubusercontent.com/RoDev00/heffefli/main/heffefli.apk';
+                            downloadLink.download = 'heffefli.apk';
+                            document.body.appendChild(downloadLink);
+                            downloadLink.click();
+                            document.body.removeChild(downloadLink);
+                            
+                            // Close modal after a delay
+                            setTimeout(() => {
+                                downloadModal.classList.remove('active');
+                                successMessage.classList.remove('active');
+                                progressBarModal.style.width = '0%';
+                                progressText.textContent = '0%';
+                                apkDownloadBtn.disabled = false;
+                            }, 3000);
+                        }, 1500);
+                    }, 500);
+                }
+            }, 150); // 15 seconds total (100 * 150ms = 15000ms = 15s)
+        });
         
         // Testimonial slider functionality
         const slider = document.querySelector('.testimonial-slider');
@@ -1369,6 +1375,7 @@
 </body>
 
 </html>
+
 
 
 
